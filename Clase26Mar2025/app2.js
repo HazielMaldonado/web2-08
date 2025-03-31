@@ -1,5 +1,5 @@
 function numeroAleatorio(min, max){
-    return Math.floor( Math.random()*(max-min)+min);
+    return Math.floor( Math.random()*(max-min + 1)+min);
 }
 console.log(numeroAleatorio(1,11));
 
@@ -20,7 +20,7 @@ function datos (a){
     return a+100;
 }
 
-function (a){
+function datos (a){
     return a + 100;
 }
 
