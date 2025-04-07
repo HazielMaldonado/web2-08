@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botones</title>
+</head>
+<body>
+    <button id="boton">Cambiar texto</button>
+    <p id="parrafo">Lorm. ipsum dolor.</p>
+    
+</body>
+<script>
+    const boton = document.querySelector("#boton");
+    const parrafo = document.querySelector("#parrafo");
+
+
+    boton.addEventListener("click", ()=> {
+        parrafo.textContent="Nuevo texto";
+    })
+</script>
+</html>
