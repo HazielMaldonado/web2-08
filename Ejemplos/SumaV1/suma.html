@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora Simple</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <h2>Calculadora con JavaScript</h2>
+
+  <label for="num1">Número 1:</label>
+  <input type="number" id="num1" placeholder="Ingresa el primer número"><br>
+
+  <label for="num2">Número 2:</label>
+  <input type="number" id="num2" placeholder="Ingresa el segundo número"><br>
+
+  <label for="operacion">Operación:</label>
+  <select id="operacion">
+    <option value="sumar">Sumar</option>
+    <option value="restar">Restar</option>
+    <option value="multiplicar">Multiplicar</option>
+    <option value="dividir">Dividir</option>
+  </select><br>
+
+  <button onclick="calcular()">Calcular</button>
+
+  <h3>Resultado: <span id="resultado">-</span></h3>
+</body>
+<script src="suma.js"></script>
+</html>
