@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Generacion de Qr</h1>
+    </header>
+        <div style="margin: top 50px;">
+            <div>
+                <label>Nombre</label>
+                    <input type="text" id="input1" required maxlength="100" placeholder="Nombre completo">
+                
+                <label>Correo</label>
+                    <input type="temail" id="input2" placeholder="Ingresa Correo">
+                
+                <label>Institucion</label>
+                    <input type="text" id="input3" required list="listaEscuelas">
+                    <datalist id="listaEscuelas">
+                        <option value="UNAM">UNAM</option>
+                        <option value="IPN">Politecnico</option>
+                        <option value="ENAP">ENAP</option>
+                        <option value="ENBA">ENBA</option>
+                    </datalist>
+                <label>Dependencia:</label>
+                    <input type="text" required maxlength="255" id="input4">
+
+                <button onclick="generarQR()">Generar QR</button>
+
+                <div style="text-align: center;" id="qr-code">
+                    <!-- Imagen QR -->
+                </div>
+    
+            </div>
+
+        </div>
+        
+
+<script src="app.js"></script>
+
+    
+</body>
+</html>
