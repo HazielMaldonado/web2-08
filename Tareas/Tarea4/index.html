@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 4. Uso de API QR</title>
+</head>
+<link rel="stylesheet" href="estilos.css">
+<body>
+    <div id="contenedor-form">
+        <form id="formulario">
+            <label for="mensaje">Mensaje a enviar</label>
+            <textarea name="mensaje" rows="5" required placeholder="Ingresa Mensaje" class="inputs" id="mensaje"></textarea>
+            <label for="numero">Ingresar número de Whatsapp</label>
+            <input id="numero" type="tel" required placeholder="5544332211" class="inputs">
+            <button id="boton" type="submit">Generar QR</button>
+        </form>
+    </div>
+    <div id="div-qr"></div>
+    <script src="app.js"></script>
+</body>
+
+</html>
