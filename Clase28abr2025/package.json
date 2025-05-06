@@ -1,0 +1,17 @@
+{
+  "name": "28abr2025",
+  "version": "1.0.0",
+  "description": "Un proyecto de node con http de manera nativa",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Node.js",
+    "Server",
+    "http",
+    "local"
+  ],
+  "author": "HazielMaldonado",
+  "license": "ISC"
+}
