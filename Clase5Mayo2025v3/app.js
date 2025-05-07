@@ -5,10 +5,10 @@ const rutas = require("./routes");
 const app = express();
 
 //configuracion del server uso de rutas
-app.use("/",routes);
+app.use("/",rutas);
 
 //puerto
-const port= 3089;
+const port= 4000;
 
 //Escucha del servidor
 app.listen(port,()=>{

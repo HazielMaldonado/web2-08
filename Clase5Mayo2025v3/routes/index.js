@@ -6,7 +6,7 @@ const path = require('path');
 
 router.get("/",(req,res)=>{
     //res.send("Hola mundo");
-    res.sendFile(path.join(__dirname, "..", "index.html"));
+    res.sendFile(path.join(__dirname+"/../index.html"));
 });
 
 
