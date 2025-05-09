@@ -8,7 +8,7 @@ const app = express();
 app.use("/",rutas);
 
 //puerto
-const port= 5000;
+const port= 5000    ;
 
 //Escucha del servidor
 app.listen(port,()=>{
