@@ -1,0 +1,98 @@
+/* styles/style.css - versión oscura con toques morados */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    padding: 40px;
+    margin: 0;
+    color: #ddd;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #ddd;
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #1e1e1e;
+    box-shadow: 0 0 10px rgba(50, 0, 70, 0.7); /* sombra morada */
+}
+
+table, td, th {
+    border: 1px solid #444;
+}
+
+td, th {
+    padding: 12px;
+    text-align: center;
+    color: #ccc;
+}
+
+th {
+    background-color: #3a2a4d; /* morado oscuro */
+    color: #ddd;
+}
+
+tr:nth-child(even) {
+    background-color: #2a2a3a;
+}
+
+a {
+    margin: 0 5px;
+    color: #b27aff; /* morado claro para enlaces */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #d9b3ff; /* morado más claro al pasar el cursor */
+    text-decoration: underline;
+}
+
+form {
+    width: 300px;
+    margin: 30px auto;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(50, 0, 70, 0.7);
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #ccc;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    background-color: #333;
+    border: 1px solid #5e4a99; /* borde morado */
+    color: #eee;
+}
+
+input::placeholder {
+    color: #999;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #6a4caf; /* morado medio */
+    border: none;
+    color: white;
+    margin-top: 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #532f91; /* morado oscuro */
+}
+

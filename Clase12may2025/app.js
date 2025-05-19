@@ -77,3 +77,50 @@ app.get('/edit/:id',(req,res)=>{
         }
     });
 });
+
+//update
+
+app.post('/update/:id',(req,res)=>{
+    const {id} =req.params;
+    const {name, email}=req.body;
+    const actualizarUser = 'UPDATE users SET name = ?, email = ? WHERE id = ?';
+    db.query(actualizarUser,[name,email,id],(err)=>{
+        if(err){
+            console.error("Sin actualizar usuario",err);
+            res.send("Error de Update");
+        }else{
+            res.redirect('/');
+        }
+    });
+});
+
+
+//eliminar usuario
+app.get('/delete/:id',(req,res)=>{
+    const {id} =req.params;
+    const eliminar = 'DELETE FROM users WHERE id = ?';
+    db.query(eliminar,[id],(err)=>{
+        if(err){
+            console.error("Error en delete",err);
+            res.send("Error en eliminar usuario");
+        }else{
+            res.redirect('/');
+        }
+    });
+});
+
+//añadir rutas, osea que la parte de las consultas esté segmentada en otr parte
+//Una ruta donde esté el back
+//Una segunda ruta para el DB
+//Una tercera ruta para el css
+
+//App
+//Rutas
+//||
+//-->>Back
+//-->>DB
+//estilos
+//||
+//-->>css
+
+//Para punto extra, en docker, instalar mysql y la aplicación de node
