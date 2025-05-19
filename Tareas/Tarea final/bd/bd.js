@@ -4,30 +4,43 @@ const router = express.Router();
 
 module.exports = (db) => {
 
-
-    
-
-    // Añadir usuario
-    router.post('/add', (req, res) => {
-        const { name, email } = req.body;
-        const insertar = 'INSERT INTO users (name, email) VALUES (?, ?)';
-        db.query(insertar, [name, email], (err) => {
+    // Mostrar todos los usuarios
+    router.get('/', (req, res) => {
+        db.query('SELECT * FROM users', (err, results) => {
             if (err) {
-                console.error('No se insertó el registro', err);
+                console.error(err);
+                res.send('Error al obtener los usuarios');
+            } else {
+                res.render('index', { users: results });
             }
-            res.redirect('/');
         });
     });
 
-    // Editar usuario
+    // Agregar usuario
+    router.post('/add', (req, res) => {
+        const { name, email } = req.body;
+        const insertarUsuario = 'INSERT INTO users (name, email) VALUES (?, ?)';
+        db.query(insertarUsuario, [name, email], (err) => {
+            if (err) {
+                console.error('No se pudo insertar el usuario', err);
+                res.send('Error al agregar usuario');
+            } else {
+                res.redirect('/');
+            }
+        });
+    });
+
+    // Mostrar formulario de edición
     router.get('/edit/:id', (req, res) => {
         const { id } = req.params;
-        const sql = 'SELECT * FROM users WHERE id = ?';
-        db.query(sql, [id], (err, results) => {
+        const buscarUsuario = 'SELECT * FROM users WHERE id = ?';
+        db.query(buscarUsuario, [id], (err, results) => {
             if (err) {
                 console.error('Error al obtener usuario', err);
+                res.send('Error al cargar edición');
+            } else {
+                res.render('edit', { user: results[0] });
             }
-            res.render('edit', { user: results[0] });
         });
     });
 
@@ -35,11 +48,11 @@ module.exports = (db) => {
     router.post('/update/:id', (req, res) => {
         const { id } = req.params;
         const { name, email } = req.body;
-        const sql = 'UPDATE users SET name = ?, email = ? WHERE id = ?';
-        db.query(sql, [name, email, id], (err) => {
+        const actualizarUsuario = 'UPDATE users SET name = ?, email = ? WHERE id = ?';
+        db.query(actualizarUsuario, [name, email, id], (err) => {
             if (err) {
-                console.error('Error al actualizar usuario', err);
-                res.send('Error de Update');
+                console.error('No se pudo actualizar el usuario', err);
+                res.send('Error al actualizar');
             } else {
                 res.redirect('/');
             }
@@ -49,11 +62,11 @@ module.exports = (db) => {
     // Eliminar usuario
     router.get('/delete/:id', (req, res) => {
         const { id } = req.params;
-        const sql = 'DELETE FROM users WHERE id = ?';
-        db.query(sql, [id], (err) => {
+        const eliminarUsuario = 'DELETE FROM users WHERE id = ?';
+        db.query(eliminarUsuario, [id], (err) => {
             if (err) {
                 console.error('Error al eliminar usuario', err);
-                res.send('Error en eliminar usuario');
+                res.send('Error al eliminar');
             } else {
                 res.redirect('/');
             }
