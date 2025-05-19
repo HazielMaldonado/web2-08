@@ -1,17 +1,17 @@
-// backend/app.js
+
 const express = require('express');
 const mysql = require('mysql2');
 const path = require('path');
 const app = express();
 
-// Configurar middleware
+
 app.use(express.urlencoded({ extended: false }));
 
-// Configurar EJS
+
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '..', 'views'));
 
-// Servir archivos estáticos (CSS)
+//  archivo css
 app.use(express.static(path.join(__dirname, '..', 'styles')));
 
 // Conexión a la base de datos
